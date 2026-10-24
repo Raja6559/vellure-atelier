@@ -30,3 +30,11 @@ Screenshots are in ignored `test-results/`. These are responsive desktop-browser
 The nine service entries and appointment journey are illustrative. No contact action, form, backend, booking, analytics integration or personal-data delivery is connected. Five supporting images are explicitly AI-generated concept imagery; prompts and source filenames are in `docs/imagery.md`.
 
 The main Krelyvo website, its existing case studies, other demos and Agent Studio were not edited. GitHub remote creation, Cloudflare deployment/custom domain and case-study linking remain later tasks.
+
+## Task 3 — final review completed 2026-10-24
+
+Reviewed the production preview from commit `83b2829` at 320, 390, 430, 768, 900, 1024, 1440 and 1920px widths. All eight had no horizontal overflow, no content extending beyond the viewport, and no uncaught browser errors. Visually checked the 768px and 1024px hero, mobile navigation and appointment preview at 320×568.
+
+A fresh production browser run passed **14/14 tests in 6.8 seconds**. Keyboard controls, focus restoration, short-screen dialog scrolling, responsive images, reduced motion and static fallbacks remain correct. The previous successful TypeScript and production build apply to the same unchanged application source.
+
+No application refinements were needed. Task 3 changes documentation only. The local build is ready for Task 4 publishing; public HTTPS, GitHub deployment and the case-study link are not yet configured.
