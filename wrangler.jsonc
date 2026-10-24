@@ -1,0 +1,12 @@
+{
+  "name": "krelyvo-demo-vellure",
+  "compatibility_date": "2026-10-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "no_bundle": true,
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": ["**/*.mjs", "**/*.js"],
+    },
+  ],
+}
