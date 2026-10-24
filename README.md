@@ -33,4 +33,4 @@ The services and appointment journey are illustrative. No booking, personal-data
 - assets/source — retained and generated source imagery
 - public/images — responsive compressed images
 
-Live demo: https://demo-vellure.krelyvo.com/. Repository: https://github.com/Raja6559/vellure-atelier (main). The public demo and main-site case-study link are verified. Automatic Git deployment for the new Worker still needs its Cloudflare Builds connection; follow docs/publishing.md. Use BUN_VERSION=1.4.2 under Builds settings.
+Live demo: https://demo-vellure.krelyvo.com/. Repository: https://github.com/Raja6559/vellure-atelier (main). The public demo and main-site case-study link are verified. Automatic Git deployment through Cloudflare Builds is verified; pushes to main deploy the demo. See docs/publishing.md for the deployment record. Use BUN_VERSION=1.4.2 under Builds settings.

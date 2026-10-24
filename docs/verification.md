@@ -46,3 +46,7 @@ Published the separate GitHub repository and Cloudflare Worker at https://demo-v
 The main website passed TypeScript and **62 unit tests**. Its installed Vite entry point built production output successfully; the local Windows vite command shim was missing, so the direct entry point was used without changing the package script. Website commit `e400abb` passed Cloudflare's automatic build. The public Vellure case-study link opens the demo by keyboard in a new tab with no opener at 390 and 1440px, with no horizontal overflow. All three original case studies return HTTP 200.
 
 Automatic Git deployment for the new Vellure Worker is pending its separate Cloudflare repository connection. See docs/publishing.md for the exact remaining setup.
+
+## Task 4 — automatic deployment completed 2026-10-24
+
+After the Worker Builds connection and BUN_VERSION were saved, commit `eec6b59` triggered a successful `Workers Builds: krelyvo-demo-vellure` check. Cloudflare deployed Worker version `34468f2c-db48-414b-a67c-a61d9194cb41`. The public page and hero image returned HTTP 200 afterward, the fictional notice and noindex remained present, and the main website still contained the correct demo link. Automatic Git deployment is verified.
