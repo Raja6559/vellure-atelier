@@ -33,4 +33,4 @@ The services and appointment journey are illustrative. No booking, personal-data
 - assets/source — retained and generated source imagery
 - public/images — responsive compressed images
 
-This local repository uses branch `feat/vellure-build`. GitHub publishing, the distinct Cloudflare Worker/custom domain, and linking the main case study are a later task. Use Bun 1.4.2 in Cloudflare Builds when publishing; its older default cannot read this lockfile.
+Live demo: https://demo-vellure.krelyvo.com/. Repository: https://github.com/Raja6559/vellure-atelier (main). The public demo and main-site case-study link are verified. Automatic Git deployment for the new Worker still needs its Cloudflare Builds connection; follow docs/publishing.md. Use BUN_VERSION=1.4.2 under Builds settings.

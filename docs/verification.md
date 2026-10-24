@@ -38,3 +38,11 @@ Reviewed the production preview from commit `83b2829` at 320, 390, 430, 768, 900
 A fresh production browser run passed **14/14 tests in 6.8 seconds**. Keyboard controls, focus restoration, short-screen dialog scrolling, responsive images, reduced motion and static fallbacks remain correct. The previous successful TypeScript and production build apply to the same unchanged application source.
 
 No application refinements were needed. Task 3 changes documentation only. The local build is ready for Task 4 publishing; public HTTPS, GitHub deployment and the case-study link are not yet configured.
+
+## Task 4 — public deployment 2026-10-24
+
+Published the separate GitHub repository and Cloudflare Worker at https://demo-vellure.krelyvo.com/. The public page and hero asset return HTTP 200 with valid HTTPS. Concept disclosure and noindex are present. The public browser suite passed **14/14 tests in 16.0 seconds**.
+
+The main website passed TypeScript and **62 unit tests**. Its installed Vite entry point built production output successfully; the local Windows vite command shim was missing, so the direct entry point was used without changing the package script. Website commit `e400abb` passed Cloudflare's automatic build. The public Vellure case-study link opens the demo by keyboard in a new tab with no opener at 390 and 1440px, with no horizontal overflow. All three original case studies return HTTP 200.
+
+Automatic Git deployment for the new Vellure Worker is pending its separate Cloudflare repository connection. See docs/publishing.md for the exact remaining setup.

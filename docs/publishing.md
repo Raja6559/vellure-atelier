@@ -1,35 +1,37 @@
-# Vellure Atelier — Task 4 publishing checklist
+# Vellure Atelier — publishing record
 
-Status: prepared after Task 3 review on 2026-10-24. Nothing in this checklist has been deployed.
+Updated: 2026-10-24.
 
-## Reviewed local project
+## Published and verified
 
-- Folder: `D:/Raja/Business Work/Krelyvo Studio/portfolio-demos/vellure-atelier`.
-- Implementation commit: `83b2829`, local branch `feat/vellure-build`.
-- Production preview: http://127.0.0.1:8089/.
-- 14/14 production browser tests pass. Review evidence: docs/verification.md.
+- Repository: https://github.com/Raja6559/vellure-atelier (public, production branch main).
+- Worker: `krelyvo-demo-vellure`, distinct from the main website and other demos.
+- Public custom domain: https://demo-vellure.krelyvo.com/.
+- First deployed Worker version: `40682919-d79c-482c-a8ca-23a6464906a4`.
+- Public HTTPS page and hero image: HTTP 200. Concept notice and noindex metadata present.
+- Public production browser suite: **14/14 passed** (16.0 seconds).
+- Cloudflare injects its own same-origin /cdn-cgi/rum performance beacon. The no-submission test excludes only that infrastructure endpoint and still rejects every application write.
+- Main website commit `e400abb` adds the verified demo link and updates Vellure's scope wording. Its `Workers Builds: krelyvo-studio-digital-growth` check succeeded.
+- Public case-study link verified by keyboard at 390 and 1440px. It opens the correct demo in a new tab with no opener, and neither layout overflows.
+- Ember, Meridian and Vellure case-study routes each return HTTP 200.
 
-## Proposed publishing targets
+## Automatic Git deployment remains to connect
 
-- GitHub repository: `Raja6559/vellure-atelier` (verify availability during Task 4).
-- Production branch: `main`, containing the reviewed local implementation.
-- Cloudflare Worker: `krelyvo-demo-vellure`, matching wrangler.jsonc.
-- Custom domain: `demo-vellure.krelyvo.com`.
-- Build command: `bun run build`.
-- Deploy command: `npx wrangler deploy --config .output/server/wrangler.json`.
-- Repository root: `/`.
-- Under **Builds → Build variables and secrets**, set plain variable `BUN_VERSION=1.4.2` before the first Git build.
-- Keep preview builds disabled for this portfolio demo.
+The demo is live from the verified manual Worker deployment. Future GitHub pushes are not yet verified to deploy this new Worker automatically.
 
-## Publishing sequence
+1. In https://github.com/settings/installations/163081653, add `Raja6559/vellure-atelier` to Cloudflare's selected repositories while preserving existing selections.
+2. Open the Vellure Worker settings in Cloudflare and connect the repository under Builds:
+   https://dash.cloudflare.com/478089e47eaac028a4638dae2beb1e2b/workers/services/view/krelyvo-demo-vellure/production/settings
+3. Use these settings:
+   - Production branch: `main`
+   - Repository root: `/`
+   - Build command: `bun run build`
+   - Deploy command: `npx wrangler deploy --config .output/server/wrangler.json`
+   - Preview builds: disabled
+4. Under **Builds → Build variables and secrets**, add the plain variable `BUN_VERSION=1.4.2`. Worker runtime variables do not control dependency installation.
+5. After saving the connection, make a fresh documentation push and confirm `Workers Builds: krelyvo-demo-vellure` succeeds and produces a new deployed Worker version.
+6. Recheck public HTTPS and update this record only after the automatic build succeeds.
 
-1. Confirm the local reviewed commit and clean state. Create this demo's separate GitHub repository and publish the reviewed snapshot.
-2. Grant Cloudflare access to this repository while preserving existing selected repositories.
-3. Add the custom-domain route and deploy the distinct Worker using the generated server config.
-4. Connect Cloudflare Builds to the correct repository and main branch with the settings above.
-5. Trigger a fresh push and verify the **Workers Builds: krelyvo-demo-vellure** GitHub check succeeds and creates a deployed Worker version.
-6. Check public HTTPS, images, concept disclosure, noindex, HTTP 404, keyboard interactions, mobile layout and the production browser suite.
-7. Only after the demo is live and checked, add its link to Krelyvo's existing Vellure case study and update the scope wording to reflect the completed single-page demo.
-8. Verify the deployed main-site case study link and both deployment checks.
+## Scope
 
-Preserve the other case studies, concept disclosures and existing sites. No homepage live-demo preview section is included. No booking, contact delivery or Agent Studio work is part of publishing this demo.
+Vellure remains a fictional, self-initiated concept. No booking or contact service is connected. The existing main-site homepage, other demos and Agent Studio were not edited by this publishing task.

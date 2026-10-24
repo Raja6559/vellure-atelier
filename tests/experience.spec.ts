@@ -42,7 +42,16 @@ test("appointment preview contains focus, restores it, and collects no data", as
 }) => {
   const writes: string[] = [];
   page.on("request", (r) => {
-    if (!["GET", "HEAD"].includes(r.method())) writes.push(r.url());
+    const url = new URL(r.url());
+    const demoOrigin = new URL(
+      process.env["DEMO_BASE_URL"] || "http://127.0.0.1:8088",
+    ).origin;
+    // Cloudflare injects its own performance beacon on the public domain.
+    // Keep rejecting every other write, including any application submission.
+    const infrastructureBeacon =
+      url.origin === demoOrigin && url.pathname === "/cdn-cgi/rum";
+    if (!["GET", "HEAD"].includes(r.method()) && !infrastructureBeacon)
+      writes.push(r.url());
   });
   await open(page);
   const trigger = page
