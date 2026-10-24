@@ -37,3 +37,5 @@ The demo is live from the verified manual Worker deployment. Future GitHub pushe
 Vellure remains a fictional, self-initiated concept. No booking or contact service is connected. The existing main-site homepage, other demos and Agent Studio were not edited by this publishing task.
 
 2026-10-24: Raja confirmed the repository connection is saved. This fresh documentation push verifies the automatic production build.
+
+2026-10-24: Raja saved the Worker Builds repository connection and BUN_VERSION=1.4.2 under Builds. This fresh push verifies the completed settings.
